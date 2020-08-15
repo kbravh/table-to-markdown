@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table to Markdown</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    This is where the UI is going to live.
+    Keep it simple with:
+    * A button to generate the markdown from the selected table.
+    <button id="convert">Convert table to markdown</button>
+    * A textarea to display the markdown.
+    <textarea name="markdown" id="markdown" cols="30" rows="10"></textarea>
+  </div>
+  <script src="panel.js"></script>
+</body>
+</html>
