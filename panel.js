@@ -22,17 +22,24 @@ const convertToMatrix = table => {
   if (!table || !table.nodeName.toLowerCase() === "table") {
     return false
   }
+
   let header = table.querySelector('thead')
-  let header_row = header.querySelector('tr')
+  let header_row
+  // some html tables don't have headers, so we don't want to fail here
+  if (header) {
+    header_row = header.querySelector('tr')
+  }
   let table_body = table.querySelector('tbody')
 
-  // Combine header row and body rows into an array
-  let rows = [header_row, ...table_body.children]
+  // Combine header row (if present) and body rows into an array
+  let rows = header_row ?
+    [header_row, ...table_body.children] :
+    [...table_body.children]
 
   // map every item into a matrix
   let tableMatrix = rows.map(row => [...row.children].map(tableElement => tableElement.innerText))
 
-  // let the first row (header) determine the column count
+  // let the first row determine the column count
   let columnCount = tableMatrix[0].length
 
   // create an array for current max width of each column, default to 0
@@ -49,6 +56,12 @@ const convertToMatrix = table => {
       }
     }
   }
+
+  // If there was no header, we'll add a blank one
+  if (!header) {
+    tableMatrix.unshift(Array(columnCount).fill(''))
+  }
+
   return {
     tableMatrix,
     columnWidths
