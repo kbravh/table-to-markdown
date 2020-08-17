@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         textarea.value = markdown
       } else {
         // there was some sort of error
-        textarea.value = `There was an issue...`
+        textarea.value = `There was an issue. Please make sure that the <table> element is selected.`
       }
     })
   })
