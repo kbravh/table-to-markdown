@@ -46,16 +46,16 @@ const convertToMatrix = table => {
   let columnWidths = Array(columnCount).fill(0)
 
   // look at each row
-  for (row of tableMatrix) {
+  tableMatrix.forEach(row => {
     // check each column of that row
-    for (let column = 0; column < columnCount; column++) {
+    row.forEach((column, index) => {
       // if the length of this column item is the largest in its column
-      if (row[column].length > columnWidths[column]) {
+      if (column.length > columnWidths[index]){
         // set it as the new max column width
-        columnWidths[column] = row[column].length
+        columnWidths[index] = column.length
       }
-    }
-  }
+    })
+  })
 
   // If there was no header, we'll add a blank one
   if (!header) {
