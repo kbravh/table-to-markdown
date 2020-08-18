@@ -36,8 +36,38 @@ const convertToMatrix = table => {
     [header_row, ...table_body.children] :
     [...table_body.children]
 
-  // map every item into a matrix
-  let tableMatrix = rows.map(row => [...row.children].map(tableElement => tableElement.innerText))
+
+  // This could be pulled as a setting from the UI
+  const span = true // if colspan and rowspan should be repeated 
+
+  /**
+   * Here, we populate our matrix based on the HTML table.
+   */
+  let tableMatrix
+
+  // This will cause rowspan and colspan elements to repeat
+  if (span) {
+    // set tableMatrix as empty arrays
+    tableMatrix = Array.from({ length: rows.length }, () => [])
+
+    rows.forEach((row, rowIndex) => {
+      [...row.children].forEach(tableElement => {
+        // grab the span attributes if present, or default to 1
+        let colspan = tableElement.getAttribute("colspan") || 1
+        let rowspan = tableElement.getAttribute("rowspan") || 1
+        // copy the elements into all cells that are spanned
+        for (let colCount = 0; colCount < colspan; colCount++) {
+          for (let rowCount = 0; rowCount < rowspan; rowCount++) {
+            tableMatrix[rowIndex+rowCount].push(tableElement.innerText.replace('\n', ' '))
+          }
+        }
+      })
+    })
+  } else {
+    // map every item into a matrix
+    tableMatrix = rows.map(row => [...row.children].map(tableElement => tableElement.innerText))
+  }
+
 
   // let the first row determine the column count
   let columnCount = tableMatrix[0].length
@@ -50,7 +80,7 @@ const convertToMatrix = table => {
     // check each column of that row
     row.forEach((column, index) => {
       // if the length of this column item is the largest in its column
-      if (column.length > columnWidths[index]){
+      if (column.length > columnWidths[index]) {
         // set it as the new max column width
         columnWidths[index] = column.length
       }
