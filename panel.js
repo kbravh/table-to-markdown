@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   })
+
+  document.querySelector("#markdown").addEventListener('click', () => {
+    let markdown = document.querySelector("#markdown")
+    markdown.focus()
+    markdown.select()
+  })
 })
 
 /**
@@ -58,7 +64,7 @@ const convertToMatrix = table => {
         // copy the elements into all cells that are spanned
         for (let colCount = 0; colCount < colspan; colCount++) {
           for (let rowCount = 0; rowCount < rowspan; rowCount++) {
-            tableMatrix[rowIndex+rowCount].push(tableElement.innerText.replace('\n', ' '))
+            tableMatrix[rowIndex + rowCount].push(tableElement.innerText.replace('\n', ' '))
           }
         }
       })
