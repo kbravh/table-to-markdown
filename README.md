@@ -300,6 +300,46 @@ It will be rendered in Markdown with the cells missing as well. Markdown parsers
 |       Theologus       |  Augustine of Hippo  |       430       |
 ```
 
+### Tables with elements that span rows or columns
+HTML tables allow for elements that span multiple rows or columns, a feature not supported in most Markdown flavors. To compensate for this, any cells that span multiple rows or columns are just repeated to avoid ambiguity. See this table of vowels from the [Esperanto Wikipedia page](https://en.wikipedia.org/wiki/Esperanto#Vowels).
+
+<br/>
+<table>
+  <tbody>
+    <tr>
+      <th></th>
+      <th>Front</th>
+      <th>Back</th>
+    </tr>
+    <tr>
+      <th style="text-align: right;">Close</th>
+      <td><span style="font-size:125%;">i</span></td>
+      <td><span style="font-size:125%;">u</span></td>
+    </tr>
+    <tr>
+      <th style="text-align: right;">Mid</th>
+      <td><span style="font-size:125%;">e</span></td>
+      <td><span style="font-size:125%;">o</span></td>
+    </tr>
+    <tr>
+      <th style="text-align: right;">Open</th>
+      <td colspan="2"><span style="font-size:125%; padding-left: 35px;">a</span></td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+The `a` vowel that spans two columns at the bottom would be repeated, and the Markdown would appear as so:
+
+```md
+|       |       |      |
+|-------|-------|------|
+|       | Front | Back |
+| Close |   i   |  u   |
+|  Mid  |   e   |  o   |
+| Open  |   a   |  a   |
+```
+
 <!-- CONTRIBUTING -->
 ## Contributing
 
