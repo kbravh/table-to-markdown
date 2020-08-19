@@ -3,5 +3,11 @@
   "version": "1.0.0",
   "description": "Convert an HTML Table to Markdown for easy export.",
   "manifest_version": 2,
-  "devtools_page": "devtools.html"
+  "devtools_page": "devtools.html",
+  "icons": {
+    "16": "images/logo_16.png",
+    "32": "images/logo_32.png",
+    "48": "images/logo_48.png",
+    "128": "images/logo_128.png"
+  }
 }
