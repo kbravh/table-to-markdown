@@ -1,23 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Table to Markdown</title>
   <style>
+    /* https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557 */
+
+    body {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      background-color: #1d3557;
+      color: #f1faee;
+    }
+
     .container {
       display: flex;
       flex-direction: column;
       align-content: center;
       justify-content: center;
+      width: 90%;
+    }
+
+    textarea {
+      resize: none;
+      height: 70vh;
+      -webkit-box-shadow: 10px 14px 13px 0px rgba(69, 123, 157, 0.52);
+      -moz-box-shadow: 10px 14px 13px 0px rgba(69, 123, 157, 0.52);
+      box-shadow: 10px 14px 13px 0px rgba(69, 123, 157, 0.52);
+    }
+
+    button {
+      all: unset;
+      cursor: pointer;
+      font-family: "Montserrat", "Trebuchet MS", Helvetica, sans-serif;
+      font-size: 20px;
+      padding: .8em 1.4em;
+      background-color: #e63946;
+      border-radius: 5px;
+      font-size: 20px;
+      text-align: center;
+      text-transform: capitalize;
+      margin-bottom: 50px;
+      margin-top: 30px;
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <button id="convert">Convert table to markdown</button>
-    <textarea name="markdown" id="markdown" cols="30" rows="10" readonly></textarea>
+    <textarea name="markdown" id="markdown" readonly></textarea>
   </div>
   <script src="panel.js"></script>
 </body>
+
 </html>
