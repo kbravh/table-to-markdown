@@ -100,7 +100,10 @@ const convertToMatrix = table => {
 
 const convertToMarkdown = ({ tableMatrix, columnWidths }) => {
   // TODO - allow for setting justification
-  let divider = columnWidths.map(columnWidth => '-'.repeat(columnWidth + 2))
+  let divider = columnWidths.map(columnWidth => {
+    // (columnWidth || 1) ensures we'll always have at least 3 dashes, a req. for markdown
+    return '-'.repeat((columnWidth || 1) + 2)
+  })
   // insert the divider after the header
   tableMatrix.splice(1, 0, divider)
 
