@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 const convertToMatrix = table => {
   // if there's no node selected or if it's not a table, hop out
-  if (!table || !table.nodeName.toLowerCase() === "table") {
+  if (!table || !(table.nodeName.toLowerCase() === "table")) {
     return false
   }
 
