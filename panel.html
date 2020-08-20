@@ -24,35 +24,60 @@
       width: 90%;
     }
 
+    img {
+      align-self: center;
+    }
+
+    h1 {
+      align-self: center;
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    ol {
+      font-size: 15px;
+      line-height: 24px;
+      align-self: center;
+    }
+
     textarea {
       resize: none;
-      height: 70vh;
-      -webkit-box-shadow: 10px 14px 13px 0px rgba(69, 123, 157, 0.52);
-      -moz-box-shadow: 10px 14px 13px 0px rgba(69, 123, 157, 0.52);
-      box-shadow: 10px 14px 13px 0px rgba(69, 123, 157, 0.52);
+      height: 20vh;
+      border-radius: 10px;
+      border: none;
+      padding: 5px;
     }
 
     button {
       all: unset;
       cursor: pointer;
-      font-family: "Montserrat", "Trebuchet MS", Helvetica, sans-serif;
+      align-self: center;
+      background-color: #f1faee;
+      color: #1d3557;
       font-size: 20px;
-      padding: .8em 1.4em;
-      background-color: #e63946;
-      border-radius: 5px;
-      font-size: 20px;
-      text-align: center;
-      text-transform: capitalize;
-      margin-bottom: 50px;
-      margin-top: 30px;
+      padding: 10px 25px;
+      border-radius: 3px;
+      margin: 30px;
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <button id="convert">Convert table to markdown</button>
-    <textarea name="markdown" id="markdown" readonly></textarea>
+    <img src="images/logo_128.png" alt="Table to Markdown Logo">
+    <h1>Table To Markdown Converter</h1>
+    <ol>
+      <li>Go to the Elements tab.</li>
+      <li>Select the table.</li>
+      <li>Open this tab.</li>
+      <li>Click Convert!</li>
+    </ol>
+    <button id="convert">Convert</button>
+    <h2>Simply click in the box to select the text.</h2>
+    <textarea name="markdown" id="markdown" placeholder="Markdown will appear here" readonly wrap="off"></textarea>
   </div>
   <script src="panel.js"></script>
 </body>
