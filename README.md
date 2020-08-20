@@ -6,8 +6,15 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-<h3 align="center">Table to Markdown</h3>
+<br />
 <p align="center">
+  <a href="https://github.com/kbravh/table-to-markdown">
+    <img src="images/logo_128.png" alt="Logo">
+  </a>
+
+  <h3 align="center">Table to Markdown</h3>
+
+  <p align="center">
     A Chrome DevTools extension to convert an HTML Table to Markdown for easy export.
     <br />
     <br />
@@ -15,8 +22,10 @@
     ·
     <a href="https://github.com/kbravh/table-to-markdown/issues">Request a Feature</a>
   </p>
+</p>
 
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 This Chrome DevTools extension adds an extra tab to the Chrome DevTools and will allow you to export any HTML Table in Markdown format.
@@ -28,6 +37,7 @@ This Chrome DevTools extension adds an extra tab to the Chrome DevTools and will
 To load this extension locally, clone the repo to your machine. Visit the Chrome extensions page at [chrome://extensions](chrome://extensions) and click the `Load Unpacked` button. Navigate to and choose this project folder that you cloned. And voilà! The extension will now appear in your browser and DevTools.
 
 <!-- USAGE EXAMPLES -->
+
 ## Usage
 
 Navigate to a page that has an HTML table element. Right click on the table you would like to export and inspect it in your DevTools. **Make sure that the `<table>` element itself is selected!**
@@ -41,14 +51,17 @@ To see an example of how a table will be rendered, let's look at the following t
 <br />
 <table>
   <thead>
+
     <tr>
       <th>Accolade</th>
       <th>Name</th>
       <th>Death
       </th>
     </tr>
+
   </thead>
   <tbody>
+
     <tr>
       <td><i>Doctor Aristotelis Anima</i></td>
       <td><a title="Johannes Dondus">Johannes Dondus</a></td>
@@ -161,6 +174,7 @@ To see an example of how a table will be rendered, let's look at the following t
       <td><a title="Thomas Doctius">Thomas Doctius</a>, Siena</td>
       <td>1441</td>
     </tr>
+
   </tbody>
   <tfoot></tfoot>
 </table>
@@ -168,7 +182,7 @@ To see an example of how a table will be rendered, let's look at the following t
 
 This table will be rendered in Markdown as follows:
 
-```
+``` 
 |             Accolade              |            Name            |    Death     |
 |-----------------------------------|----------------------------|--------------|
 |     Doctor Aristotelis Anima      |      Johannes Dondus       |     1380     |
@@ -196,11 +210,13 @@ This table will be rendered in Markdown as follows:
 ```
 
 ### HTML Tables without headers
+
 Most Markdown table parsers do not support header-less tables. To compensate for this, this extension throws in a blank header row. For example, take the following table (taken from the [NBA Most Valuable Player Award Wikipedia page](https://en.wikipedia.org/wiki/NBA_Most_Valuable_Player_Award)).
 
 <br/>
 <table>
   <tbody>
+
     <tr>
       <td style="background-color:#CFECEC; border:1px solid #aaaaaa; width:6em; color: #535056;">^</td>
       <td>Denotes player who is still active in the NBA</td>
@@ -221,13 +237,14 @@ Most Markdown table parsers do not support header-less tables. To compensate for
       <td>Team (X)</td>
       <td>Denotes the number of times a player from this team had won at that time</td>
     </tr>
+
   </tbody>
 </table>
 <br/>
 
 This table will be rendered in Markdown like this:
 
-```
+``` 
 |            |                                                                          |
 |------------|--------------------------------------------------------------------------|
 |     ^      |              Denotes player who is still active in the NBA               |
@@ -238,19 +255,23 @@ This table will be rendered in Markdown like this:
 ```
 
 ### HTML tables with missing cells
+
 HTML tables sometimes leave off empty cells in the final column, like this table about [medieval accolades](https://en.wikipedia.org/wiki/Scholastic_accolades#Other_medieval_accolades).
 
 <br/>
 <table>
   <thead>
+
     <tr>
       <th>Accolade</th>
       <th>Name</th>
       <th>Death</th>
       <th>Translation/Notes</th>
     </tr>
+
   </thead>
   <tbody>
+
     <tr>
       <td><i>Apostolus</i></td>
       <td>St. <atitle="Paul of Tarsus">Paul</a></td>
@@ -283,13 +304,14 @@ HTML tables sometimes leave off empty cells in the final column, like this table
       <td><a title="Augustine of Hippo">Augustine of Hippo</a></td>
       <td>430</td>
     </tr>
+
   </tbody>
 </table>
 <br/>
 
 It will be rendered in Markdown with the cells missing as well. Markdown parsers usually handle this gracefully and render the table with those cells blank.
 
-```md
+``` md
 |       Accolade        |         Name         |      Death      |                             Translation/Notes                             |
 |-----------------------|----------------------|-----------------|---------------------------------------------------------------------------|
 |       Apostolus       |       St. Paul       |       67        | Due to his preeminence among the Letters of the Apostles within the Bible |
@@ -301,11 +323,13 @@ It will be rendered in Markdown with the cells missing as well. Markdown parsers
 ```
 
 ### Tables with elements that span rows or columns
+
 HTML tables allow for elements that span multiple rows or columns, a feature not supported in most Markdown flavors. To compensate for this, any cells that span multiple rows or columns are just repeated to avoid ambiguity. See this table of vowels from the [Esperanto Wikipedia page](https://en.wikipedia.org/wiki/Esperanto#Vowels).
 
 <br/>
 <table>
   <tbody>
+
     <tr>
       <th></th>
       <th>Front</th>
@@ -325,13 +349,14 @@ HTML tables allow for elements that span multiple rows or columns, a feature not
       <th style="text-align: right;">Open</th>
       <td colspan="2"><span style="font-size:125%; padding-left: 35px;">a</span></td>
     </tr>
+
   </tbody>
 </table>
 <br/>
 
 The `a` vowel that spans two columns at the bottom would be repeated, and the Markdown would appear as so:
 
-```md
+``` md
 |       |       |      |
 |-------|-------|------|
 |       | Front | Back |
@@ -341,27 +366,28 @@ The `a` vowel that spans two columns at the bottom would be repeated, and the Ma
 ```
 
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your Feature Branch ( `git checkout -b feature/AmazingFeature` )
+3. Commit your Changes ( `git commit -m 'Add some AmazingFeature'` )
+4. Push to the Branch ( `git push origin feature/AmazingFeature` )
 5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details
+This project is licensed under the MIT License - see the [ `LICENSE` ](LICENSE) file for details
 
 <!-- CONTACT -->
+
 ## Contact
 
 Karey Higuera - [@kbravh](https://twitter.com/kbravh) - karey.higuera@gmail.com
 
 Project Link: [https://github.com/kbravh/table-to-markdown](https://github.com/kbravh/table-to-markdown)
-
 
 <!-- MARKDOWN LINKS -->
 [issues-shield]: https://img.shields.io/github/issues/kbravh/table-to-markdown.svg?style=flat-square
