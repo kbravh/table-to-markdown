@@ -1,6 +1,6 @@
 {
   "name": "HTML Table to Markdown",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Convert an HTML Table to Markdown for easy export.",
   "manifest_version": 2,
   "devtools_page": "devtools.html",
