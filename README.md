@@ -8,7 +8,7 @@
 
 <br />
 <p align="center">
-  <a href="https://github.com/kbravh/table-to-markdown">
+  <a href="https://chrome.google.com/webstore/detail/html-table-to-markdown/ghcdpakfleapaahmemphphdojhdabojj">
     <img src="images/logo_128.png" alt="Logo">
   </a>
 
@@ -34,7 +34,9 @@ This Chrome DevTools extension adds an extra tab to the Chrome DevTools and will
 
 ## Installing
 
-To load this extension locally, clone the repo to your machine. Visit the Chrome extensions page at [chrome://extensions](chrome://extensions) and click the `Load Unpacked` button. Navigate to and choose this project folder that you cloned. And voilà! The extension will now appear in your browser and DevTools.
+The latest published version of the extension can be installed from the [Chrome Web Store](https://chrome.google.com/webstore/detail/html-table-to-markdown/ghcdpakfleapaahmemphphdojhdabojj).
+
+To load this extension locally for development, clone the repo to your machine. Visit the Chrome extensions page at [chrome://extensions](chrome://extensions) and click the `Load Unpacked` button. Navigate to and choose this project folder that you cloned. And voilà! The extension will now appear in your browser and DevTools.
 
 <!-- USAGE EXAMPLES -->
 
