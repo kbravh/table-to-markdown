@@ -93,11 +93,6 @@ const convertToMatrix = table => {
     })
   })
 
-  // If there was no header, we'll add a blank one
-  if (!header) {
-    tableMatrix.unshift(Array(columnCount).fill(''))
-  }
-
   return {
     tableMatrix,
     columnWidths
@@ -105,6 +100,12 @@ const convertToMatrix = table => {
 }
 
 const convertToMarkdown = ({ tableMatrix, columnWidths }) => {
+  // This setting will add a blank header row in. Useful for HTML tables without headers.
+  let blankHeader = document.querySelector("#blank-header").checked
+  if (blankHeader) {
+    tableMatrix.unshift(Array(columnWidths.length).fill(''))
+  }
+
   // TODO - allow for setting justification
   let divider = columnWidths.map(columnWidth => {
     // (columnWidth || 1) ensures we'll always have at least 3 dashes, a req. for markdown
