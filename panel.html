@@ -7,6 +7,7 @@
   <title>Table to Markdown</title>
   <link rel="stylesheet" href="panel.css">
 </head>
+
 <body>
   <div class="container">
     <img src="images/logo_128.png" alt="Table to Markdown Logo">
@@ -17,8 +18,29 @@
       <li>Open this tab.</li>
       <li>Click Convert!</li>
     </ol>
+    <div class="options-dropdown">
+      <div class="options-wrapper">
+        <input class="accordion-checkbox" type="checkbox" checked>
+        <div class="options-header">
+          <h2>Options</h2>
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15">
+            <path fill="#e63946" d="M1.092 1.278L2.182 0l2.2 2.516L6.58 5.03 8.78 2.516 10.979 0l1.09 1.278 1.09 1.278-3.11 3.54C8.337 8.045 6.856 9.716 6.759 9.81l-.178.17-.179-.17c-.098-.094-1.578-1.764-3.289-3.712L0 2.556z"/>
+          </svg>
+        </div>
+        <div class="options">
+          <label for="blank-header">
+            <input type="checkbox" name="blank-header" id="blank-header">
+            Leave the header blank
+          </label>
+          <label for="no-pretty-print">
+            <input type="checkbox" name="no-pretty-print" id="no-pretty-print">
+            Disable pretty printing
+          </label>
+        </div>
+      </div>
+    </div>
     <button id="convert">Convert</button>
-    <h2>Simply click in the box to select the text.</h2>
+    <h3>Simply click in the box to select the text.</h3>
     <textarea name="markdown" id="markdown" placeholder="Markdown will appear here" readonly wrap="off"></textarea>
   </div>
   <script src="panel.js"></script>

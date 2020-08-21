@@ -11,28 +11,22 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   width: 90%;
 }
 
-img {
-  align-self: center;
-}
-
 h1 {
-  align-self: center;
   text-align: center;
 }
 
-h2 {
+h3 {
   text-align: center;
 }
 
 ol {
   font-size: 15px;
   line-height: 24px;
-  align-self: center;
 }
 
 textarea {
@@ -41,6 +35,7 @@ textarea {
   border-radius: 10px;
   border: none;
   padding: 5px;
+  align-self: stretch;
 }
 
 button {
@@ -53,4 +48,102 @@ button {
   padding: 10px 25px;
   border-radius: 3px;
   margin: 30px;
+}
+
+/* Options dropdown settings */
+h2 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 0;
+  cursor: pointer;
+  margin: 0;
+}
+
+.options-dropdown {
+  perspective: 900;
+  padding: 0;
+  margin: 0;
+  align-self: stretch;
+}
+
+.options-wrapper {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  animation: flipdown 0.5s ease;
+}
+
+.options-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.options-header svg {
+  margin-left: 5px;
+  padding-top: 5px;
+  transform-origin: center center;
+  transition: all 0.25s ease-in-out;
+}
+
+.accordion-checkbox {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 24px;
+  margin: 0;
+  z-index: 1;
+  opacity: 0;
+}
+
+.accordion-checkbox:checked~.options-header>svg {
+  transform: rotate(-90deg);
+}
+
+.accordion-checkbox:checked~.options{
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  transform: translate( 0 , 50% );
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 5px;
+  position: relative;
+  overflow: hidden;
+  opacity: 1;
+  transform: translate(0,0);
+  z-index: 2;
+  transition: all 0.25s ease-in-out;
+}
+
+.options label {
+  font-size: 16px;
+}
+
+@keyframes flipdown {
+  0% {
+    opacity: 0;
+    transform-origin: top center;
+    transform: rotateX(-90deg);
+  }
+  5% {opacity: 1}
+  80% {transform: rotateX(8deg);}
+  83% {transform: rotateX(6deg);}
+  92% {transform: rotateX(-3deg);}
+  100% {
+    transform-origin: top center;
+    transform: rotateX(0);
+  }
 }
