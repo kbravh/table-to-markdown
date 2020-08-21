@@ -1,0 +1,56 @@
+/* https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557 */
+
+body {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: #1d3557;
+  color: #f1faee;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 90%;
+}
+
+img {
+  align-self: center;
+}
+
+h1 {
+  align-self: center;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+ol {
+  font-size: 15px;
+  line-height: 24px;
+  align-self: center;
+}
+
+textarea {
+  resize: none;
+  height: 20vh;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  align-self: center;
+  background-color: #f1faee;
+  color: #1d3557;
+  font-size: 20px;
+  padding: 10px 25px;
+  border-radius: 3px;
+  margin: 30px;
+}
