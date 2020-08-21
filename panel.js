@@ -106,7 +106,7 @@ const convertToMarkdown = ({ tableMatrix, columnWidths }) => {
     tableMatrix.unshift(Array(columnWidths.length).fill(''))
   }
 
-  // TODO - allow for setting justification
+  // Create the divider row that sits beneath the header
   let divider = columnWidths.map(columnWidth => {
     // (columnWidth || 1) ensures we'll always have at least 3 dashes, a req. for markdown
     return '-'.repeat((columnWidth || 1) + 2)
