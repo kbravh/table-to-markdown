@@ -106,8 +106,15 @@ const convertToMarkdown = ({ tableMatrix, columnWidths }) => {
     tableMatrix.unshift(Array(columnWidths.length).fill(''))
   }
 
+  // This setting will remove all the extra spaces in the markdown table used to make things look nice.
+  let noPrettyPrint = document.querySelector("#no-pretty-print").checked
+
   // Create the divider row that sits beneath the header
   let divider = columnWidths.map(columnWidth => {
+    // stick to the minimum 3 if pretty printing turned off
+    if(noPrettyPrint){
+      return '---'
+    }
     // (columnWidth || 1) ensures we'll always have at least 3 dashes, a req. for markdown
     return '-'.repeat((columnWidth || 1) + 2)
   })
@@ -117,6 +124,10 @@ const convertToMarkdown = ({ tableMatrix, columnWidths }) => {
   let markdown = tableMatrix.map(row => {
     // create a row with all columns correctly spaced and joined together
     let spacedRow = row.map((item, column) => {
+      // skip adding spaces if pretty print is turned off
+      if (noPrettyPrint) {
+        return item
+      }
       let columnWidth = columnWidths[column] + 2
       let leftSpace = ' '.repeat(Math.floor((columnWidth - item.length) / 2))
       let rightSpace = ' '.repeat(Math.ceil((columnWidth - item.length) / 2))

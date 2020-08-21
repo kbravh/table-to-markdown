@@ -115,12 +115,21 @@ h2 {
 }
 
 .options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 5px;
   position: relative;
   overflow: hidden;
   opacity: 1;
   transform: translate(0,0);
   z-index: 2;
   transition: all 0.25s ease-in-out;
+}
+
+.options label {
+  font-size: 16px;
 }
 
 @keyframes flipdown {
