@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         textarea.value = markdown
       } else {
         // there was some sort of error
-        textarea.value = `There was an issue. Please make sure that the <table> element is selected.`
+        textarea.value = `There was an issue. Please make sure that a table is selected.`
       }
     })
   })
@@ -21,21 +21,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /**
  * Returns a 2D array of the HTML table provided.
- * @param {HTMLElement} table - the table to convert to a matrix.
+ * @param {HTMLElement} node - the table to convert to a matrix.
  */
-const convertToMatrix = table => {
-  // if there's no node selected or if it's not a table, hop out
-  if (!table || !(table.nodeName.toLowerCase() === "table")) {
+const convertToMatrix = node => {
+  // if there's no node selected, hop out
+  if (!node) {
     return false
   }
 
-  let header = table.querySelector('thead')
+  // if the provided node isn't a table, climb to see if we can find one
+  if (!(node.nodeName.toLowerCase() === "table")) {
+    // We'll keep climbing until we either find a table or the top of the document
+    while(node.nodeName.toLowerCase() !== "table" && node.nodeName.toLowerCase !== "body"){
+      node = node.parentElement
+    }
+  }
+
+  // we'll check if a table was found
+  if (node.nodeName.toLowerCase() !== "table") {
+    return false
+  }
+
+  let header = node.querySelector('thead')
   let header_row
   // some html tables don't have headers, so we don't want to fail here
   if (header) {
     header_row = header.querySelector('tr')
   }
-  let table_body = table.querySelector('tbody')
+  let table_body = node.querySelector('tbody')
 
   // Combine header row (if present) and body rows into an array
   let rows = header_row ?
@@ -44,7 +57,7 @@ const convertToMatrix = table => {
 
 
   // This could be pulled as a setting from the UI
-  const span = true // if colspan and rowspan should be repeated 
+  const span = true // if colspan and rowspan should be repeated
 
   /**
    * Here, we populate our matrix based on the HTML table.
