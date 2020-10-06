@@ -42,7 +42,7 @@ To load this extension locally for development, clone the repo to your machine. 
 
 ## Usage
 
-Navigate to a page that has an HTML table element. Right click on the table you would like to export and inspect it in your DevTools. **Make sure that the `<table>` element itself is selected!**
+Navigate to a page that has an HTML table element. Right click anywhere on the table you would like to export and inspect it in your DevTools. You don't have to select the top `<table>` element yourself! If you selected anything inside of the table, the extension will find the entire table.
 
 Open the Table to Markdown panel of the DevTools (you may need to click the dropdown to see it). Click the `Convert to Markdown` button, and your markdown table will appear in the box.
 
