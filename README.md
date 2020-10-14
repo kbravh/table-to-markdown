@@ -5,6 +5,8 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+[![Chrome Web Store Version][chrome-version-shield]][chrome-url]
+[![Chrome Web Store Users][chrome-users-shield]][chrome-url]
 
 <br />
 <p align="center">
@@ -398,3 +400,6 @@ Project Link: [https://github.com/kbravh/table-to-markdown](https://github.com/k
 [license-url]: https://github.com/kbravh/table-to-markdown/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/kbravh
+[chrome-version-shield]: https://img.shields.io/chrome-web-store/v/ghcdpakfleapaahmemphphdojhdabojj?style=flat-square
+[chrome-users-shield]: https://img.shields.io/chrome-web-store/users/ghcdpakfleapaahmemphphdojhdabojj?style=flat-square
+[chrome-url]: https://chrome.google.com/webstore/detail/html-table-to-markdown/ghcdpakfleapaahmemphphdojhdabojj
