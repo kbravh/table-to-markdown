@@ -141,7 +141,8 @@ const convertToMarkdown = ({ tableMatrix, columnWidths }) => {
       if (noPrettyPrint) {
         return item
       }
-      let columnWidth = columnWidths[column] + 2
+      // Column width must be a minimum of 3 to match the divider
+      let columnWidth = columnWidths[column] < 1 ? 3 : columnWidths[column] + 2
       let leftSpace = ' '.repeat(Math.floor((columnWidth - item.length) / 2))
       let rightSpace = ' '.repeat(Math.ceil((columnWidth - item.length) / 2))
       return leftSpace + item + rightSpace
